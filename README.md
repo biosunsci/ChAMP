@@ -9,7 +9,7 @@ Currently, ChAMP package is maintained by [YuanTian1991](https://github.com/Yuan
 Install Code:
 
 ```
-git clone https://github.com/YuanTian1991/ChAMP.git
+git clone https://github.com/biosunsci/ChAMP.git
 R CMD INSTALL ChAMP
 ```
 
