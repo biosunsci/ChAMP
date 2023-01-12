@@ -136,12 +136,12 @@ champ.DMR <- function(beta=myNorm,
         if(nrow(DMR) == 0) stop("No DMR detected.")
 
         rownames(DMR) <- paste("DMR",1:nrow(DMR),sep="_")
-        #DMRProbes <- apply(DMR,1,function(x) Anno[which(Anno$chr==x[1] & Anno$pos>= as.numeric(x[2]) & Anno$pos<= as.numeric(x[3])),])
+        DMRProbes <- apply(DMR,1,function(x) Anno[which(Anno$chr==x[1] & Anno$pos>= as.numeric(x[2]) & Anno$pos<= as.numeric(x[3])),])
         DMR <- data.frame(DMR[,1:3],width=DMR[,3]-DMR[,2],strand="*",DMR[,4:14])
         colnames(DMR)[1:3] <- c("seqnames","start","end") 
 
-        #OutputDMR <- list(BumphunterDMR=DMR,BumphunterDMRProbes=DMRProbes)
-        OutputDMR <- list(BumphunterDMR=DMR)
+        OutputDMR <- list(BumphunterDMR=DMR,BumphunterDMRProbes=DMRProbes)
+        #OutputDMR <- list(BumphunterDMR=DMR)
 
     } else if(method == "ProbeLasso")
     {
